@@ -374,6 +374,32 @@ console.log(NaN !== NaN);
 console.log(typeof arrayMethod.constructor)
 console.log(1+parseInt(8))
 
+console.log("------------------- Array Method 예제");
+var funcThis = this;
+function Func(){
+	funcThis = this;
+	}
+var o1 = Func();
+console.log(funcThis);
+var o2 = new Func();
+console.log(funcThis);
+
+console.log("------------------- 생성자 함수 예제");
+var createee = 50;
+var CreateFunc = function(){
+	var a = 10;
+	this.b = 20;
+	console.log(createee);
+	return { b : a};
+}
+var created = new CreateFunc();
+var uncreated = CreateFunc;
+console.log(1,created);
+console.log(2, uncreated());
+console.log(3)
+
+
+
 
 //sum();
 //console.log(sum());
